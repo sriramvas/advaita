@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Documentation</title>
+    <style>
+        /* Simple reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+        }
+        
+        /* Left navigation sidebar */
+        .navbar {
+            width: 250px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            border-right: 1px solid #ddd;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .navbar h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .navbar ul {
+            list-style: none;
+        }
+        
+        .navbar li {
+            margin-bottom: 10px;
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #0066cc;
+            display: block;
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        
+        .navbar a.active {
+            font-weight: bold;
+        }
+        
+        /* Main content area */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+        }
+        
+        /* Typography */
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Hide all pages by default */
+        .page {
+            display: none;
+        }
+        
+        /* Show active page */
+        .page.active {
+            display: block;
+        }
+        
+        /* Mobile nav toggle button */
+        .nav-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Overlay for mobile when nav is open */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+        
+            .navbar {
+                transform: translateX(-100%);
+                width: 80%;
+                max-width: 300px;
+            }
+            
+            .navbar.open {
+                transform: translateX(0);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            .overlay.active {
+                display: block;
+            }
+            
+            .content {
+                margin-left: 0;
+                padding-top: 60px; /* Space for the toggle button */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Nav Toggle Button -->
+    <button class="nav-toggle" aria-label="Toggle navigation">☰ Menu</button>
+    
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
+    
+    <!-- Left Navigation -->
+    <div class="navbar">
+        <h3>Documentation</h3>
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#getting-started" class="nav-link">Getting Started</a></li>
+        </ul>
+    </div>
+    
+    <!-- Content Area -->
+    <div class="content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h1>Documentation Home</h1>
+            <p>Welcome to our ultra lightweight documentation site. This minimal site is built using pure HTML and CSS with no external dependencies.</p>
+            
+            <h2>Overview</h2>
+            <p>This documentation template is designed to be as simple as possible while still providing all essential functionality. It includes:</p>
+            <ul>
+                <li>A clean, minimal design</li>
+                <li>Left-side navigation with mobile collapse support</li>
+                <li>Multiple pages in a single HTML file</li>
+                <li>No external dependencies or JavaScript frameworks</li>
+                <li>Fast loading and rendering</li>
+            </ul>
+            
+            <h2>Features</h2>
+            <p>Despite its simplicity, this documentation site includes several useful features:</p>
+            <ul>
+                <li>Responsive design that works on mobile and desktop</li>
+                <li>Collapsible navigation for mobile screens</li>
+                <li>Clean typography for easy reading</li>
+                <li>Simple navigation between pages</li>
+                <li>Minimal inline JavaScript for page switching</li>
+            </ul>
+            
+            <p>Click on the "Getting Started" link in the navigation to see how to use this template.</p>
+        </div>
+        
+        <!-- Getting Started Page -->
+        <div id="getting-started" class="page">
+            <h1>Getting Started</h1>
+            <p>This guide will help you understand how to use and customize this ultra lightweight documentation template.</p>
+            
+            <h2>How It Works</h2>
+            <p>This documentation is built as a single HTML file with multiple "pages" that are shown or hidden using minimal JavaScript. The entire system consists of:</p>
+            <ul>
+                <li>HTML structure for content organization</li>
+                <li>CSS for styling and layout</li>
+                <li>Minimal JavaScript for page switching and mobile navigation</li>
+            </ul>
+            
+            <h2>Customization</h2>
+            <p>To customize this documentation for your own use:</p>
+            <ol>
+                <li>Modify the navigation links in the navbar section</li>
+                <li>Add your own page content by creating new div elements with the "page" class</li>
+                <li>Update the navigation links to point to your new pages</li>
+                <li>Customize the CSS to match your brand or preferences</li>
+            </ol>
+            
+            <h2>Adding New Pages</h2>
+            <p>To add a new page:</p>
+            <ol>
+                <li>Add a new navigation link in the navbar with href="#your-page-id"</li>
+                <li>Create a new div with id matching your link's href and the class "page"</li>
+                <li>Add your content to this new div</li>
+            </ol>
+            
+            <h2>Mobile Navigation</h2>
+            <p>On mobile devices, the navigation menu is collapsed by default to save space. Users can:</p>
+            <ul>
+                <li>Tap the "☰ Menu" button to open the navigation</li>
+                <li>Tap a navigation link to go to that page (the menu will close automatically)</li>
+                <li>Tap outside the menu or press the menu button again to close it</li>
+            </ul>
+            
+            <p>That's it! This documentation system is designed to be as simple as possible while still being functional and easy to use.</p>
+        </div>
+    </div>
+    
+    <!-- Minimal JavaScript for page switching and mobile navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const navToggle = document.querySelector('.nav-toggle');
+            const navbar = document.querySelector('.navbar');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Toggle mobile navigation
+            navToggle.addEventListener('click', function() {
+                navbar.classList.toggle('open');
+                overlay.classList.toggle('active');
+            });
+            
+            // Close navigation when clicking overlay
+            overlay.addEventListener('click', function() {
+                navbar.classList.remove('open');
+                overlay.classList.remove('active');
+            });
+            
+            // Handle navigation clicks
+            for (var i = 0; i < navLinks.length; i++) {
+                navLinks[i].addEventListener('click', function(e) {
+                    // Get the target page ID from the href attribute
+                    var targetId = this.getAttribute('href').substring(1);
+                    
+                    // Hide all pages
+                    var pages = document.getElementsByClassName('page');
+                    for (var j = 0; j < pages.length; j++) {
+                        pages[j].classList.remove('active');
+                    }
+                    
+                    // Show the target page
+                    var targetPage = document.getElementById(targetId);
+                    if (targetPage) {
+                        targetPage.classList.add('active');
+                    }
+                    
+                    // Update active link
+                    var links = document.getElementsByClassName('nav-link');
+                    for (var k = 0; k < links.length; k++) {
+                        links[k].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    
+                    // Close mobile navigation
+                    navbar.classList.remove('open');
+                    overlay.classList.remove('active');
+                    
+                    // Prevent default link behavior
+                    e.preventDefault();
+                });
+            }
+            
+            // Check URL hash on page load
+            if (window.location.hash) {
+                var hash = window.location.hash.substring(1);
+                var targetPage = document.getElementById(hash);
+                var targetLink = document.querySelector('a[href="#' + hash + '"]');
+                
+                if (targetPage && targetLink) {
+                    // Hide all pages
+                    var pages = document.getElementsByClassName('page');
+                    for (var j = 0; j < pages.length; j++) {
+                        pages[j].classList.remove('active');
+                    }
+                    
+                    // Show target page
+                    targetPage.classList.add('active');
+                    
+                    // Update active link
+                    var links = document.getElementsByClassName('nav-link');
+                    for (var k = 0; k < links.length; k++) {
+                        links[k].classList.remove('active');
+                    }
+                    targetLink.classList.add('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
